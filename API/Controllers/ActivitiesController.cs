@@ -8,10 +8,10 @@ using System;
 
 namespace API.Controllers
 {
-    public class ActivitesController : BaseApiController
+    public class ActivitiesController : BaseApiController
     {
         private readonly DataContext _context;
-        public ActivitesController(DataContext context)
+        public ActivitiesController(DataContext context)
         {
             _context = context;
         }
@@ -20,7 +20,7 @@ namespace API.Controllers
         {
             return await _context.Activities.ToListAsync();
         }
-        [HttpGet("{id}")] //activites/id
+        [HttpGet("{id}")] //activities/id
 
         public async Task<ActionResult<Activity>> GetActivity(Guid id)
         {
